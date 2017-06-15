@@ -7,7 +7,9 @@
   {% if post.sticky > 0 %}
     {% set post_class = post_class + ' ' + 'post-sticky' %}
   {% endif %}
-
+  {% if not is_index %}
+  {% include '../_custom/google_adsense.swig' %}
+  {% endif %}
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 

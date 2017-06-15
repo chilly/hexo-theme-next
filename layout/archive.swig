@@ -7,7 +7,7 @@
 {% block page_class %} page-archive {% endblock %}
 
 {% block content %}
-
+  {% include '_custom/google_adsense.swig' %}
   <section id="posts" class="posts-collapse">
     <span class="archive-move-on"></span>
 

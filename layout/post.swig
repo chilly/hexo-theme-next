@@ -5,6 +5,7 @@
 
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
+
 {% block page_class %}page-post-detail{% endblock %}
 
 

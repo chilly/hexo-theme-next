@@ -13,6 +13,7 @@
   #}{% endif %}{#
 #}{% endblock %}
 
+
 {% block page_class %}page-post-detail{% endblock %}
 
 {% block content %}

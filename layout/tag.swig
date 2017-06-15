@@ -5,7 +5,7 @@
 {% block title %}{{ __('title.tag') }}: {{ page.tag }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-
+{% include '_custom/google_adsense.swig' %}
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <{% if theme.seo %}h2{% else %}h1{% endif %}>{#

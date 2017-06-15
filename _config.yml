@@ -50,7 +50,7 @@ menu:
   #about: /about/
   archives: /archives/
   tags: /tags/
-  #sitemap: /sitemap.xml
+  sitemap: /sitemap.xml
   #commonweal: /404.html
 
 
@@ -185,8 +185,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  position: left
-  #position: right
+  #position: left
+  position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -283,7 +283,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night eighties
 
 
 # ---------------------------------------------------------------
@@ -312,11 +312,11 @@ han: true
 # Disqus
 disqus:
   enable: false
-  shortname:
+  shortname: chillyc
   count: true
 
 # Hypercomments
-#hypercomments_id:
+hypercomments_id: 92082
 
 # Gentie productKey
 #gentie_productKey:
@@ -345,7 +345,7 @@ changyan:
 # Share
 #jiathis:
 # Warning: JiaThis does not support https.
-#add_this_id:
+  #add_this_id: 1574449
 
 # Share
 #duoshuo_share: true
@@ -424,7 +424,7 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i>
@@ -447,7 +447,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
