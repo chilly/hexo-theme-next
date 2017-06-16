@@ -142,6 +142,7 @@
 
           </div>
         </section>
+        {% include '../_custom/google_right_sidebar.swig' %}
       <!--/noindex-->
       {% endif %}
 

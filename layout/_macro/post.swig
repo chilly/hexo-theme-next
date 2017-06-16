@@ -8,7 +8,12 @@
     {% set post_class = post_class + ' ' + 'post-sticky' %}
   {% endif %}
   {% if not is_index %}
-  {% include '../_custom/google_adsense.swig' %}
+    {% include '../_custom/google_adsense.swig' %}
+  {% endif %}
+  {% if is_index %}
+    {% if loop.index == 2 or loop.index % 5 == 0 %}
+        {% include '../_custom/google_adsense.swig' %}
+    {% endif %}
   {% endif %}
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
@@ -146,7 +151,7 @@
                 </a>
               </span>
             {% elseif theme.hypercomments_id %}
-            <!--noindex-->
+              {% if not is_index %} 
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
@@ -156,6 +161,7 @@
                   <span class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span>
                 </a>
               </span>
+              {% endif %}
               <!--/noindex-->
             {% elseif is_post() and theme.gentie_productKey %}
               <span class="post-comments-count">
