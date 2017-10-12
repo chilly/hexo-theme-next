@@ -1,42 +1,47 @@
-<div class="copyright" >
-  {% set current = date(Date.now(), "YYYY") %}
-  &copy; {% if theme.since and theme.since != current %} {{ theme.since }} - {% endif %}
-  <span itemprop="copyrightYear">{{ current }}</span>
+<div class="copyright">{#
+#}{% set current = date(Date.now(), "YYYY") %}{#
+#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} &mdash; {% endif %}{#
+#}<span itemprop="copyrightYear">{{ current }}</span>
   <span class="with-love">
-    <i class="fa fa-{{ theme.authoricon }}"></i>
+    <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
+  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
+
+  {% if theme.post_wordcount.totalcount %}
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    {% if theme.post_wordcount.item_text %}
+      <span class="post-meta-item-text">{{ __('post.totalcount') }}&#58;</span>
+    {% endif %}
+    <span title="{{ __('post.totalcount') }}">{#
+    #}{{ totalcount(site, '0,0.0a') }}{#
+  #}</span>
+  {% endif %}
 </div>
 
-{% if theme.copyright %}
-<div class="powered-by">
-  {{ __('footer.powered', '<a class="theme-link" href="https://hexo.io">Hexo</a>') }}
-</div>
-<div class="theme-info">
-  {{ __('footer.theme') }} -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="nofollow">
-    NexT.{{ theme.scheme }}
-  </a>
-</div>
+{% if theme.footer.powered %}
+  <div class="powered-by">{#
+  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
+#}</div>
+{% endif %}
 
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=11368238; 
-var sc_invisible=1; 
-var sc_security="85975d8a"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web analytics"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/11368238/0/85975d8a/1/" alt="web
-analytics"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
+{% if theme.footer.powered and theme.footer.theme.enable %}
+  <span class="post-meta-divider">|</span>
+{% endif %}
 
+{% if theme.footer.theme.enable %}
+  <div class="theme-info">{#
+  #}{{ __('footer.theme') }} &mdash; {#
+  #}<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">{#
+    #}NexT.{{ theme.scheme }}{#
+  #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
+#}</div>
+{% endif %}
 
-
+{% if theme.footer.custom_text %}
+  <div class="footer-custom">{#
+  #}{{ theme.footer.custom_text }}{#
+#}</div>
 {% endif %}

@@ -5,19 +5,30 @@
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ config.title }}{% endblock %}
 
 {% block content %}
+
+  {######################}
+  {### CATEGORY BLOCK ###}
+  {######################}
+  <div class="post-block category">
+
 {% include '_custom/google_adsense.swig' %}
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
-      #}{{ page.category }}{#
-      #}<small>{{  __('title.category')  }}</small>
-      </{% if theme.seo %}h2{% else %}h1{% endif %}>
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
+        #}{{ page.category }}{#
+        #}<small>{{  __('title.category')  }}</small>
+        </{% if theme.seo %}h2{% else %}h1{% endif %}>
+      </div>
+
+      {% for post in page.posts %}
+        {{ post_template.render(post) }}
+      {% endfor %}
     </div>
 
-    {% for post in page.posts %}
-      {{ post_template.render(post) }}
-    {% endfor %}
-  </section>
+  </div>
+  {##########################}
+  {### END CATEGORY BLOCK ###}
+  {##########################}
 
   {% include '_partials/pagination.swig' %}
 

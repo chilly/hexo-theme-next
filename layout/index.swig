@@ -5,7 +5,7 @@
 {% block title %}{{ theme.keywords }} - {{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %} - {{ theme.description }} {% endblock %}
 
 {% block page_class %}
-  {% if is_home() %} page-home {% endif %}
+  {% if is_home() %}page-home{% endif -%}
 {% endblock %}
 
 {% block content %}
