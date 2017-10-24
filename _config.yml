@@ -19,15 +19,15 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  small: favicon-16x16.ico
+  medium: favicon.ico
   apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  safari_pinned_tab: favicon-safari.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "帐前卒,编程,java"
+keywords: "帐前卒,编程,java,架构,软件,software,architect,solution"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -454,7 +454,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-11621532-3
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
